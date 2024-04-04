@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `cadastro` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci */;
+USE `cadastro`;
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: cadastro
@@ -14,6 +16,26 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `cursos`
+--
+
+DROP TABLE IF EXISTS `cursos`;
+
+CREATE TABLE `cursos` (
+  `idcurso` int(11) NOT NULL,
+  `nome` varchar(30) NOT NULL,
+  `descricao` text DEFAULT NULL,
+  `carga` int(10) unsigned DEFAULT NULL,
+  `totaulas` int(10) unsigned DEFAULT NULL,
+  `ano` year(4) DEFAULT 2024,
+  PRIMARY KEY (`idcurso`),
+  UNIQUE KEY `nome` (`nome`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+LOCK TABLES `cursos` WRITE;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `gafanhotos`
@@ -55,4 +77,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-04 18:41:57
+-- Dump completed on 2024-04-04 20:30:15
